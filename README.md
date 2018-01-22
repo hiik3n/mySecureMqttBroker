@@ -103,15 +103,16 @@ The ca.crt belongs to the client (needs to be copied there).
 			#require_certificate, which may be set to true or false. If false, the SSL/TLS component of the client will 	verify the server but there is no requirement for the client to provide anything for the server
 			require_certificate false
 	
-4. Launch my Mosquitto broker with the -c option pointing to the modified configuration file
-	
-			mosquitto -c mosquitto.conf -v
-	
-5. Restart Mosquitto service
+4. Restart Mosquitto service
 
 			sudo service mosquitto restart
+5. Test connection:
+
+		
+			mosquitto_sub -h ip -p 8883 -t "test" -u "user" -P "pwd" --cafile ca.crt
+			mosquitto_pub -h ip -p 8883 -t "test" -m "hello world" -u "user" -P "pwd" --cafile ca.crt --tls-version tlsv1.2
 	
-6. Firewall allow 8883
+5. Firewall allow 8883
 		
 			sudo ufw allow 8883
 
