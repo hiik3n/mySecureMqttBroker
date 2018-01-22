@@ -108,6 +108,7 @@ The ca.crt belongs to the client (needs to be copied there).
 			mosquitto -c mosquitto.conf -v
 	
 5. Restart Mosquitto service
+
 			sudo service mosquitto restart
 	
 6. Firewall allow 8883
