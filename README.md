@@ -89,7 +89,7 @@ The ca.crt belongs to the client (needs to be copied there).
 
 			# Port to use for the default listener.
 			port 8883
-			...
+			
 			#capath
 			cafile /etc/mosquitto/certs/ca.crt
 
@@ -99,7 +99,7 @@ The ca.crt belongs to the client (needs to be copied there).
 			# Path to the PEM encoded keyfile.
 			keyfile /etc/mosquitto/certs/server.key
 			
-			tls_version tlsv1.1
+			tls_version tlsv1
 			#require_certificate, which may be set to true or false. If false, the SSL/TLS component of the client will 	verify the server but there is no requirement for the client to provide anything for the server
 			require_certificate false
 	
