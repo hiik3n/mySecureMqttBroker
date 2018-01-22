@@ -100,6 +100,7 @@ The ca.crt belongs to the client (needs to be copied there).
 			keyfile /etc/mosquitto/certs/server.key
 			
 			tls_version tlsv1.1
+			#require_certificate, which may be set to true or false. If false, the SSL/TLS component of the client will 	verify the server but there is no requirement for the client to provide anything for the server
 			require_certificate false
 	
 4. Launch my Mosquitto broker with the -c option pointing to the modified configuration file
