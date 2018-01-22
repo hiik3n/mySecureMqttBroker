@@ -99,7 +99,7 @@ The ca.crt belongs to the client (needs to be copied there).
 			# Path to the PEM encoded keyfile.
 			keyfile /etc/mosquitto/certs/server.key
 			
-			tls_version tlsv1
+			tls_version tlsv1.2
 			#require_certificate, which may be set to true or false. If false, the SSL/TLS component of the client will 	verify the server but there is no requirement for the client to provide anything for the server
 			require_certificate false
 	
@@ -115,6 +115,12 @@ The ca.crt belongs to the client (needs to be copied there).
 5. Firewall allow 8883
 		
 			sudo ufw allow 8883
+6. Copy file to client
+			
+			
+			tar -cvzf client01.tar.gz client01
+			tar -xvzf client01.tar.gz
+			scp source-address:file_path destination_address:file_path
 
 ### References:
 
@@ -131,3 +137,8 @@ MQTT with TLS/SSL
 MQTT on Digital Ocean
 
 		https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-the-mosquitto-mqtt-messaging-broker-on-ubuntu-16-04
+
+MQTT Conf
+
+		https://mosquitto.org/man/mosquitto-conf-5.html
+		
