@@ -16,6 +16,10 @@ Configuring MQTT Passwords
 			
       allow_anonymous false
       password_file /etc/mosquitto/passwd
+
+Check connection
+
+	telnet ip port
 	
 restart Mosquitto
 	
@@ -23,6 +27,15 @@ restart Mosquitto
 
     mosquitto_sub -h localhost -t test -u "sammy" -P "password"
     mosquitto_pub -h localhost -t "test" -m "hello world" -u "sammy" -P "password"
+    mosquitto_pub -h ip -p 1883 -t "test" -m "hello" -u "user" -P "pwd"
+
+Remove the mosquitto
+
+	sudo apt-get remove  mosquitto mosquitto-clients
+		
+Completely removing mosquitto with all configuration files
+
+	sudo apt-get purge mosquitto mosquitto-clients
 
 ### Manually generate certs:
 
